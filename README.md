@@ -1,8 +1,15 @@
-# Kasparro — Agentic Facebook Performance Analyst
+# 🚀 Kasparro — Agentic Facebook Performance Analyst
 
 An autonomous multi-agent system that diagnoses Facebook Ads performance, identifies ROAS fluctuation drivers, and recommends data-driven creative improvements.
 
-## Quick Start
+[![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-00A67E?logo=openai&logoColor=white)](https://openai.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/Version-v1.0-orange)](https://github.com/PVK-Nandan/kasparro-agentic-fb-analyst-nandan/releases/tag/v1.0)
+
+---
+
+## ⚡ Quick Start
 
 ```bash
 # Check Python version (requires >= 3.10)
@@ -22,7 +29,23 @@ export OPENAI_API_KEY="your-key-here"  # Windows: set OPENAI_API_KEY=your-key-he
 python src/run.py "Analyze ROAS drop in last 7 days"
 ```
 
-## Data Setup
+---
+
+## 🔥 Features
+
+| Capability | Description |
+|------------|-------------|
+| 📊 **Data Agent** | Ingests CSV → cleans → aggregates → summarizes metrics (ROAS, CTR, CPC, Spend) |
+| 🧠 **Insight Agent** | Generates hypotheses from statistics & trends |
+| ✔ **Evaluator Agent** | Validates claims, assigns confidence score (0-1), retries if weak |
+| ✍ **Creative Generator** | Suggests new high-impact creatives based on winners/losers |
+| 🔄 **Fully Orchestrated Pipeline** | Query → Planning → Data → Insights → Evaluation → Creatives |
+| 🧾 **JSON + Markdown Output** | Reports saved with explanations, evidence, recommendations |
+| 📜 **Logging + Observability** | Every run produces trace logs for debugging & audits |
+
+---
+
+## 📊 Data Setup
 
 Place your Facebook Ads CSV file in one of two ways:
 
@@ -40,7 +63,9 @@ cp data/sample_fb_ads.csv data/fb_ads.csv
 
 See `data/README.md` for data format details.
 
-## Configuration
+---
+
+## ⚙️ Configuration
 
 Edit `config/config.yaml`:
 
@@ -54,32 +79,58 @@ openai_model: "gpt-4"
 max_insights: 5
 ```
 
-## Repository Structure
+---
+
+## 📂 Project Structure
 
 ```
+kasparro-agentic-fb-analyst-nandan/
+├── README.md                          📘 Main documentation + usage guide
+├── requirements.txt                   📦 Dependency list (pinned)
+├── Makefile                           ⚙️ Quick automation tasks
+├── .gitignore                         🚫 Prevents sensitive/unnecessary files
+├── agent_graph.md                     🧠 System architecture layout
+├── SELF_REVIEW.md                     🔍 Deep design reasoning + decisions
+├── SETUP_GUIDE.md                     🚀 Setup & execution instructions
+├── SUBMISSION_SUMMARY.md              🏁 Final solution overview
+│
+├── config/
+│   └── config.yaml                    🔧 All runtime configuration + model settings
+│
 ├── src/
-│   ├── run.py                      # Main CLI entry point
+│   ├── run.py                         ▶ Entry point — run analysis here
 │   ├── orchestrator/
-│   │   └── agent_orchestrator.py   # Agent coordination logic
+│   │   └── agent_orchestrator.py      🤖 Multi-agent execution controller
 │   ├── agents/
-│   │   ├── planner.py              # Query decomposition
-│   │   ├── data_agent.py           # Data loading & summarization
-│   │   ├── insight_agent.py        # Hypothesis generation
-│   │   ├── evaluator.py            # Quantitative validation
-│   │   └── creative_generator.py   # Creative recommendations
+│   │   ├── planner.py                 🧭 Breaks query into subtasks
+│   │   ├── data_agent.py              📊 CSV ingestion + metric summaries
+│   │   ├── insight_agent.py           🧠 Hypothesis generation
+│   │   ├── evaluator.py               🧾 Confidence-based validation
+│   │   └── creative_generator.py      ✍ AI-powered creative suggestions
 │   └── utils/
-│       └── helpers.py              # Shared utilities
-├── prompts/                        # Structured prompt templates
-├── reports/                        # Generated outputs
-│   ├── report.md
-│   ├── insights.json
-│   └── creatives.json
-├── logs/                          # Execution traces
-├── tests/                         # Agent validation tests
-└── config/                        # Configuration files
+│       └── helpers.py                 🛠 Shared utilities + logging support
+│
+├── prompts/
+│   ├── planner_prompt.md              🧩 Task planning instructions
+│   ├── data_agent_prompt.md           🔢 Data summarization schema
+│   ├── insight_agent_prompt.md        🔍 Insight reasoning framework
+│   ├── evaluator_prompt.md            🧠 Confidence scoring + validation
+│   └── creative_generator_prompt.md   🎨 Ad copy + creative direction
+│
+├── data/
+│   ├── README.md                      📄 Data specification + schema
+│   └── sample_fb_ads.csv              🧪 Example dataset for testing
+│
+├── tests/
+│   └── test_evaluator.py              🧪 Unit tests for evaluator logic
+│
+├── reports/                           📤 Final analysis output (generated)
+└── logs/                              📑 Trace logs for execution debugging
 ```
 
-## Architecture
+---
+
+## 🏗️ Architecture
 
 ### Agent Flow Diagram
 
@@ -117,7 +168,9 @@ User Query
 4. **Evaluator**: Validates hypotheses with quantitative checks, assigns confidence scores
 5. **Creative Generator**: Produces new headlines/messages for low-CTR campaigns based on existing data
 
-## Running Examples
+---
+
+## 💻 Running Examples
 
 ```bash
 # Analyze ROAS changes
@@ -133,7 +186,9 @@ python src/run.py "Suggest new creative messages for low-performing ads"
 python src/run.py "Analyze performance by platform and recommend optimizations"
 ```
 
-## Outputs
+---
+
+## 📤 Outputs
 
 All outputs are generated in `reports/`:
 
@@ -141,7 +196,9 @@ All outputs are generated in `reports/`:
 - **insights.json**: Structured hypotheses with confidence scores
 - **creatives.json**: Creative recommendations for low-CTR campaigns
 
-## Validation & Testing
+---
+
+## 🧪 Validation & Testing
 
 The system includes quantitative validation:
 
@@ -153,7 +210,9 @@ python -m pytest tests/test_evaluator.py
 cat logs/execution_trace_*.json
 ```
 
-## Observability
+---
+
+## 📊 Observability
 
 Execution traces are logged in `logs/` directory with:
 - Agent inputs/outputs
@@ -161,7 +220,9 @@ Execution traces are logged in `logs/` directory with:
 - Validation results
 - Timestamp information
 
-## Key Design Decisions
+---
+
+## 🎯 Key Design Decisions
 
 ### Prompt Architecture
 - **Structured prompts** with explicit reasoning steps (Think → Analyze → Conclude)
@@ -178,25 +239,58 @@ Execution traces are logged in `logs/` directory with:
 - Hypotheses below threshold trigger re-analysis
 - Final report includes only high-confidence insights
 
-## Requirements
+---
+
+## 📋 Requirements
 
 - Python 3.10+
 - OpenAI API key
 - Dependencies in `requirements.txt`
 
-## Release Information
+---
+
+## 🎓 Why This Project Matters
+
+This system demonstrates true applied AI engineering, not prompt hacking.
+
+✔ Real software architecture  
+✔ Confidence-based validation  
+✔ Separate reasoning vs creativity modules  
+✔ Scalable agent design  
+✔ Logs, traceability, maintainability  
+
+This is the type of pipeline you would use in production, not a hackathon demo.
+
+---
+
+## 📌 Release Information
 
 - **Version**: v1.0
 - **Release Tag**: `v1.0`
-- **Commit Hash**: [See GitHub release]
+- **Status**: Stable
 
-## Self-Review
+---
 
-See Pull Request: "self-review" for detailed design choices and architectural tradeoffs.
+## 👨‍💻 About the Developer
 
-## Contact
+**Nandan Pakki V K**
 
-For questions about this implementation:
-- **Assignment**: Kasparro Applied AI Engineer
-- **Repository**: kasparro-agentic-fb-analyst-nandan
-- **Email**: grandmaster@kasparro.com
+🧠 AI/ML Engineer | Autonomous Agent Systems Specialist
+
+Building production-grade AI solutions with real-world impact
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nandan-pakki-v-k-01639b253/)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PVK-Nandan)
+[![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:grandmaster@kasparro.com)
+
+**💡 Specializations:**  
+Multi-Agent Systems • LangGraph • OpenAI • RAG Pipelines • Production ML
+
+**🔬 Currently Working On:**  
+Autonomous AI agents for marketing analytics and business intelligence
+
+---
+
+⭐ **If you found this project helpful, please consider giving it a star!**
+
+Built with 💙 by [Nandan Pakki V K](https://github.com/PVK-Nandan)
