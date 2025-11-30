@@ -281,7 +281,7 @@ Building production-grade AI solutions with real-world impact
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nandan-pakki-v-k-01639b253/)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PVK-Nandan)
-[![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:grandmaster@kasparro.com)
+[![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:pakkinandan09@gmail.com)
 
 **💡 Specializations:**  
 Multi-Agent Systems • LangGraph • OpenAI • RAG Pipelines • Production ML
