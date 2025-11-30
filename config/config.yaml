@@ -1,0 +1,36 @@
+# Kasparro Agentic FB Analyst Configuration
+
+# Python environment
+python: "3.10"
+
+# Randomness control
+random_seed: 42
+
+# Data settings
+use_sample_data: true
+data_path: "data/synthetic_fb_ads_undergarments.csv"
+full_data_path: null  # Set via environment variable DATA_CSV
+
+# Model configuration
+openai_model: "gpt-4o"
+temperature: 0.7
+max_tokens: 2000
+
+# Agent parameters
+confidence_min: 0.6
+max_insights: 5
+max_retries: 2
+
+# Analysis thresholds
+low_ctr_threshold: 0.015  # 1.5%
+low_roas_threshold: 3.0
+min_spend_threshold: 50.0
+
+# Output settings
+output_dir: "reports"
+log_dir: "logs"
+enable_detailed_logs: true
+
+# Date analysis
+lookback_days: 7
+date_format: "%d-%m-%Y"
